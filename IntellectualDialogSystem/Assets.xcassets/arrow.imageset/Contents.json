@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "1904671-arrow-arrow-right-change-direction-next-page-right_122521.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
