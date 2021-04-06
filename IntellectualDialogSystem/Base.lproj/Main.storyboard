@@ -97,10 +97,31 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7D-sN-1GI">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HL-rv-fGj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="3HL-rv-fGj" secondAttribute="bottom" id="NG2-Qv-5Ke"/>
+                                                    <constraint firstItem="3HL-rv-fGj" firstAttribute="height" secondItem="U7D-sN-1GI" secondAttribute="height" id="a1u-ya-AKH"/>
+                                                    <constraint firstItem="3HL-rv-fGj" firstAttribute="top" secondItem="U7D-sN-1GI" secondAttribute="top" id="qER-sy-R0r"/>
+                                                    <constraint firstItem="3HL-rv-fGj" firstAttribute="leading" secondItem="U7D-sN-1GI" secondAttribute="leading" id="ueg-K4-iQ2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3HL-rv-fGj" secondAttribute="trailing" id="yKN-YC-98P"/>
+                                                    <constraint firstItem="3HL-rv-fGj" firstAttribute="width" secondItem="U7D-sN-1GI" secondAttribute="width" id="zgb-vb-N9g"/>
+                                                </constraints>
+                                            </scrollView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="U7D-sN-1GI" firstAttribute="top" secondItem="dnd-kV-fow" secondAttribute="top" id="18f-Vs-4Bv"/>
+                                            <constraint firstItem="OtL-C0-bHu" firstAttribute="top" secondItem="U7D-sN-1GI" secondAttribute="bottom" id="DTd-5v-WOA"/>
                                             <constraint firstItem="OtL-C0-bHu" firstAttribute="leading" secondItem="dnd-kV-fow" secondAttribute="leading" constant="10" id="NRa-nE-NvS"/>
+                                            <constraint firstAttribute="trailing" secondItem="U7D-sN-1GI" secondAttribute="trailing" id="ZR6-oV-Nz5"/>
+                                            <constraint firstItem="U7D-sN-1GI" firstAttribute="leading" secondItem="dnd-kV-fow" secondAttribute="leading" id="Zdj-J7-UWA"/>
                                             <constraint firstAttribute="trailing" secondItem="OtL-C0-bHu" secondAttribute="trailing" constant="10" id="iot-NX-O4y"/>
                                             <constraint firstAttribute="bottom" secondItem="OtL-C0-bHu" secondAttribute="bottom" id="xKo-mi-aoN"/>
                                         </constraints>
@@ -128,6 +149,7 @@
                     <connections>
                         <outlet property="contentView" destination="dnd-kV-fow" id="Np0-Oc-JnI"/>
                         <outlet property="enterMessageTextField" destination="OtL-C0-bHu" id="31d-Xa-2NT"/>
+                        <outlet property="messageContentView" destination="3HL-rv-fGj" id="oLX-zu-a6G"/>
                         <outlet property="scrollView" destination="cak-vZ-dwR" id="ggf-xH-yOi"/>
                     </connections>
                 </viewController>

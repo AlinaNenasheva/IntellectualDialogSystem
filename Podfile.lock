@@ -24,17 +24,49 @@ PODS:
     - ApiAI/Core
   - ApiAI/VoiceRequest (0.7.2):
     - ApiAI/Core
+  - Applozic (7.11.1):
+    - SDWebImage (~> 5.9.2)
+  - ApplozicSwift (5.15.0):
+    - ApplozicSwift/Complete (= 5.15.0)
+  - ApplozicSwift/Complete (5.15.0):
+    - Applozic (~> 7.11.0)
+    - ApplozicSwift/RichMessageKit
+    - Kingfisher (~> 5.14.0)
+    - MGSwipeTableCell (~> 1.6.11)
+  - ApplozicSwift/RichMessageKit (5.15.0)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - Kommunicate (5.14.0):
+    - ApplozicSwift (~> 5.15.0)
+  - MGSwipeTableCell (1.6.11)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
 
 DEPENDENCIES:
   - ApiAI
+  - Kommunicate
 
 SPEC REPOS:
   trunk:
     - ApiAI
+    - Applozic
+    - ApplozicSwift
+    - Kingfisher
+    - Kommunicate
+    - MGSwipeTableCell
+    - SDWebImage
 
 SPEC CHECKSUMS:
   ApiAI: d4b49d3736f33ce6f3ef66dc33c0e0fccb23579e
+  Applozic: 673eba55f167f1b06004ec8f959b356d3a59af66
+  ApplozicSwift: 1c9b934d109141922e3815d881350f1d2cdcb55d
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  Kommunicate: f4ab5cbb4ef9422f374846f80490a367e5a37793
+  MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
-PODFILE CHECKSUM: d8244ca270d66eec905c3551234e6af3a8f0ca6d
+PODFILE CHECKSUM: 8b7b1cfd4476b4e4cace38be9e625b7e74fec4f5
 
 COCOAPODS: 1.10.0

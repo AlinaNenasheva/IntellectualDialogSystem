@@ -6,5 +6,5 @@ target 'IntellectualDialogSystem' do
   use_frameworks!
 pod 'ApiAI'
   # Pods for IntellectualDialogSystem
-
+pod 'Kommunicate'
 end

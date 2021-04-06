@@ -1,34 +1,36 @@
-//
-//  AppDelegate.swift
-//  IntellectualDialogSystem
-//
-//  Created by Алина Ненашева on 3.04.21.
-//
-
 import UIKit
-
+import ApiAI
+import Kommunicate
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        Kommunicate.setup(applicationId:"LhCt3V0R6ByyR9u9riAPrg4hZmPp4wL8")
+        let kmUser = KMUser()
+        kmUser.userId = "Alina Nen"
+        // Pass userId here NOTE : +,*,? are not allowed chars in userId.
+        kmUser.email = "alinochka.no1@gmail.com" // Optional
+
+        // Use this same API for login
+        Kommunicate.registerUser(kmUser, completion: {
+            response, error in
+            guard error == nil else {return}
+            print(" login Success ")
+            // You can launch the chat screen on success of login
+        })
         return true
     }
 
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
+
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
 
