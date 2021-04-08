@@ -1,25 +1,17 @@
 import UIKit
-import ApiAI
-import Kommunicate
+import Assistant
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Kommunicate.setup(applicationId:"LhCt3V0R6ByyR9u9riAPrg4hZmPp4wL8")
-        let kmUser = KMUser()
-        kmUser.userId = "Alina Nen"
-        // Pass userId here NOTE : +,*,? are not allowed chars in userId.
-        kmUser.email = "alinochka.no1@gmail.com" // Optional
+        let authenticator = WatsonIAMAuthenticator(apiKey: "gg-ju1YQvOkPMXa2AcA10NvGtxVEr3SmuxuFKxX-Qe7c")
+        let assistant = Assistant(version: "{version}", authenticator: authenticator)
+        assistant.serviceURL = "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/2e5e7a75-fbb7-4c5a-9d05-60f3b3c8120b"
 
-        // Use this same API for login
-        Kommunicate.registerUser(kmUser, completion: {
-            response, error in
-            guard error == nil else {return}
-            print(" login Success ")
-            // You can launch the chat screen on success of login
-        })
+        assistant.disableSSLVerification()
         return true
     }
 

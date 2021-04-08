@@ -31,15 +31,13 @@ class MessageView: UIView {
         if (8 * messageText.count) % Int(contentView.frame.width - 55) != 0 {
             numberOfLines = Int(8 * messageText.count) / Int(contentView.frame.width - 55) + 1
         } else {
-            numberOfLines = Int(8
-                                    * messageText.count) / Int(contentView.frame.width - 55)
+            numberOfLines = Int(8 * messageText.count) / Int(contentView.frame.width - 55)
         }
         print(numberOfLines)
-        let frame = CGRect(x: 10, y: Int(contentView.frame.width) - ((numberOfLines == 1) ? 90 : numberOfLines * 60), width: Int(contentView.frame.width) - 10, height: (numberOfLines == 1) ? 90 : numberOfLines * 60 )
+        let frame = CGRect(x: 0, y: Int(contentView.frame.height) - ((numberOfLines == 1) ? 90 : numberOfLines * 60), width: Int(contentView.frame.width) - 10, height: (numberOfLines == 1) ? 90 : numberOfLines * 60 )
         super.init(frame: frame)
         self.isBot = isBot
-        self.messageTextLabel
-            .numberOfLines = numberOfLines + 1
+        self.messageTextLabel.numberOfLines = numberOfLines + 1
         self.messageTextLabel.text = messageText
         self.addCustomView()
         contentView.addSubview(self)
@@ -72,8 +70,8 @@ class MessageView: UIView {
     }
     
     func addMessage(height: CGFloat) {
-        UIView.animate(withDuration: 0.5) {
-            self.frame = CGRect(x: 0, y: self.frame.size.height - height, width: self.frame.size.width, height: self.frame.size.height);
+        UIView.animate(withDuration: 0.1) {
+            self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y - height, width: self.frame.size.width, height: self.frame.size.height);
         }
 
     }

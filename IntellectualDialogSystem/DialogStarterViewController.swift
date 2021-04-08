@@ -1,10 +1,9 @@
 import UIKit
 
-class ViewController: UIViewController {
+class DialogStarterViewController: UIViewController {
 
-    
-    @IBOutlet weak var resumeOldDialog: UIButton!
     @IBOutlet weak var startNewDialog: UIButton!
+    @IBOutlet weak var resumeOldDialog: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,7 +13,7 @@ class ViewController: UIViewController {
             resumeOldDialog.isEnabled = false
         }
     }
-
+    
     func checkIfUDEmpty() -> Bool {
         if let messages = UserDefaults.standard.array(forKey: "messages") {
             if messages.isEmpty {
@@ -23,6 +22,21 @@ class ViewController: UIViewController {
         }
         return false
     }
-
+    
+    
+    @IBAction func startNewDialogButtonPressed(_ sender: Any) {
+        goToMessagengerWindow()
+    }
+    
+    @IBAction func resumeOldDialogButtonPressed(_ sender: Any) {
+        goToMessagengerWindow()
+    }
+    
+    func goToMessagengerWindow() {
+        performSegue(withIdentifier: "showToDialogWindow", sender: self)
+    }
+    
+    func retriveData() {
+        
+    }
 }
-

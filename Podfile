@@ -4,7 +4,6 @@
 target 'IntellectualDialogSystem' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-pod 'ApiAI'
   # Pods for IntellectualDialogSystem
-pod 'Kommunicate'
+pod 'IBMWatsonAssistantV2', '~> 4.1.0'
 end

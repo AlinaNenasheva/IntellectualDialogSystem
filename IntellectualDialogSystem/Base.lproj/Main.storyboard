@@ -8,11 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Starting View Controller-->
+        <!--Dialog Starter View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="StartingViewController" id="BYZ-38-t0r" customClass="StartingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DialogStarterViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="DialogStarterViewController" customModule="IntellectualDialogSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +31,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startDialodButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VPe-3v-E94"/>
+                                    <action selector="startNewDialogButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Evp-Ip-Uiq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UL8-1e-TC6">
@@ -52,6 +52,7 @@
                                 </state>
                                 <connections>
                                     <action selector="resumeDialogButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YdZ-6f-ODY"/>
+                                    <action selector="resumeOldDialogButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9kQ-Kh-OtK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,18 +68,21 @@
                             <constraint firstItem="UL8-1e-TC6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZi-Ii-wwq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CLJ-7C-aBB"/>
                     <connections>
-                        <outlet property="resumeOldDialog" destination="UL8-1e-TC6" id="HPe-Gi-Rfg"/>
-                        <outlet property="startNewDialog" destination="z53-0t-gA8" id="SKb-Dc-Uc7"/>
+                        <outlet property="resumeOldDialog" destination="UL8-1e-TC6" id="6B4-qD-nMf"/>
+                        <outlet property="startNewDialog" destination="z53-0t-gA8" id="KOH-vr-bBv"/>
+                        <segue destination="1Xd-V4-ngS" kind="show" identifier="showToDialogWindow" id="18x-45-xYG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95.652173913043484" y="67.633928571428569"/>
         </scene>
         <!--Messenger View Controller-->
         <scene sceneID="QkB-OR-1zu">
             <objects>
-                <viewController id="1Xd-V4-ngS" customClass="MessengerViewController" customModule="IntellectualDialogSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="1Xd-V4-ngS" customClass="MessengerViewController" customModule="IntellectualDialogSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Gd-sH-NsG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,11 +150,13 @@
                             <constraint firstItem="0sJ-Gy-ztw" firstAttribute="bottom" secondItem="cak-vZ-dwR" secondAttribute="bottom" id="zID-fS-5aV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="yuN-j9-axA"/>
                     <connections>
                         <outlet property="contentView" destination="dnd-kV-fow" id="Np0-Oc-JnI"/>
                         <outlet property="enterMessageTextField" destination="OtL-C0-bHu" id="31d-Xa-2NT"/>
                         <outlet property="messageContentView" destination="3HL-rv-fGj" id="oLX-zu-a6G"/>
                         <outlet property="scrollView" destination="cak-vZ-dwR" id="ggf-xH-yOi"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showToStarterPage" id="gRk-ra-Csp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKS-4g-axk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

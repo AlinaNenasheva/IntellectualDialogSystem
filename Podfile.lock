@@ -1,72 +1,20 @@
 PODS:
-  - ApiAI (0.7.2):
-    - ApiAI/AudioFileConverter (= 0.7.2)
-    - ApiAI/Core (= 0.7.2)
-    - ApiAI/Events (= 0.7.2)
-    - ApiAI/ResponseMapping (= 0.7.2)
-    - ApiAI/UIKit (= 0.7.2)
-    - ApiAI/UserEntities (= 0.7.2)
-    - ApiAI/VoiceFileRequest (= 0.7.2)
-    - ApiAI/VoiceRequest (= 0.7.2)
-  - ApiAI/AudioFileConverter (0.7.2):
-    - ApiAI/Core
-  - ApiAI/Core (0.7.2)
-  - ApiAI/Events (0.7.2):
-    - ApiAI/Core
-  - ApiAI/ResponseMapping (0.7.2):
-    - ApiAI/Core
-  - ApiAI/UIKit (0.7.2):
-    - ApiAI/Core
-    - ApiAI/VoiceRequest
-  - ApiAI/UserEntities (0.7.2):
-    - ApiAI/Core
-  - ApiAI/VoiceFileRequest (0.7.2):
-    - ApiAI/Core
-  - ApiAI/VoiceRequest (0.7.2):
-    - ApiAI/Core
-  - Applozic (7.11.1):
-    - SDWebImage (~> 5.9.2)
-  - ApplozicSwift (5.15.0):
-    - ApplozicSwift/Complete (= 5.15.0)
-  - ApplozicSwift/Complete (5.15.0):
-    - Applozic (~> 7.11.0)
-    - ApplozicSwift/RichMessageKit
-    - Kingfisher (~> 5.14.0)
-    - MGSwipeTableCell (~> 1.6.11)
-  - ApplozicSwift/RichMessageKit (5.15.0)
-  - Kingfisher (5.14.1):
-    - Kingfisher/Core (= 5.14.1)
-  - Kingfisher/Core (5.14.1)
-  - Kommunicate (5.14.0):
-    - ApplozicSwift (~> 5.15.0)
-  - MGSwipeTableCell (1.6.11)
-  - SDWebImage (5.9.5):
-    - SDWebImage/Core (= 5.9.5)
-  - SDWebImage/Core (5.9.5)
+  - IBMSwiftSDKCore (1.0.0)
+  - IBMWatsonAssistantV2 (4.1.0):
+    - IBMSwiftSDKCore (~> 1.0.0)
 
 DEPENDENCIES:
-  - ApiAI
-  - Kommunicate
+  - IBMWatsonAssistantV2 (~> 4.1.0)
 
 SPEC REPOS:
   trunk:
-    - ApiAI
-    - Applozic
-    - ApplozicSwift
-    - Kingfisher
-    - Kommunicate
-    - MGSwipeTableCell
-    - SDWebImage
+    - IBMSwiftSDKCore
+    - IBMWatsonAssistantV2
 
 SPEC CHECKSUMS:
-  ApiAI: d4b49d3736f33ce6f3ef66dc33c0e0fccb23579e
-  Applozic: 673eba55f167f1b06004ec8f959b356d3a59af66
-  ApplozicSwift: 1c9b934d109141922e3815d881350f1d2cdcb55d
-  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
-  Kommunicate: f4ab5cbb4ef9422f374846f80490a367e5a37793
-  MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
-  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
+  IBMSwiftSDKCore: 54ad77b03a4d27b218ba514580197db3b89a96ca
+  IBMWatsonAssistantV2: af685999c510cfac9125027f548737b0455b779c
 
-PODFILE CHECKSUM: 8b7b1cfd4476b4e4cace38be9e625b7e74fec4f5
+PODFILE CHECKSUM: 42883f28203c83faec4656676fd27f0412afca51
 
 COCOAPODS: 1.10.0

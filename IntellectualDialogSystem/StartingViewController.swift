@@ -16,7 +16,7 @@ class StartingViewController: UIViewController {
     }
 
     func checkIfUDEmpty() -> Bool {
-        if let messages = UserDefaults.standard.array(forKey: "messages") {
+        if let messages = UserDefaults.standard.array(forKey: "SavedMessages") {
             if messages.isEmpty {
                 return true
             }
@@ -33,9 +33,7 @@ class StartingViewController: UIViewController {
     }
     
     func goToMessagengerWindow() {
-        let stroyboard = UIStoryboard(name: "Main", bundle: nil)
-        let messangerViewController = stroyboard.instantiateViewController(identifier: String(describing: MessengerViewController.self))
-        navigationController?.pushViewController(messangerViewController, animated: true)
+
     }
     
     

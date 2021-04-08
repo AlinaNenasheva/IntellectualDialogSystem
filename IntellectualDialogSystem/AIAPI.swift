@@ -1,6 +1,8 @@
 import Foundation
-import ApiAI
-import Kommunicate
-class AIAPI {
 
+
+class AIAPI {
+    static func startConversation(testViewController: TestViewController) {
+        
+    }
 }

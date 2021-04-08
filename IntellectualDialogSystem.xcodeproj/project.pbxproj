@@ -18,6 +18,7 @@
 		48A3432B261B246600163F77 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3432A261B246600163F77 /* TestViewController.swift */; };
 		48A34332261B5BE100163F77 /* MessagesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A34331261B5BE100163F77 /* MessagesStorage.swift */; };
 		48C44423261B72B400CFD11C /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C44422261B72B400CFD11C /* StartingViewController.swift */; };
+		48FC9C57261DBA8300319C1B /* DialogStarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC9C56261DBA8300319C1B /* DialogStarterViewController.swift */; };
 		7F016C8B515531E78FB4536B /* Pods_IntellectualDialogSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691C7B8568E91931FE228796 /* Pods_IntellectualDialogSystem.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		48A3432A261B246600163F77 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		48A34331261B5BE100163F77 /* MessagesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesStorage.swift; sourceTree = "<group>"; };
 		48C44422261B72B400CFD11C /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
+		48FC9C56261DBA8300319C1B /* DialogStarterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogStarterViewController.swift; sourceTree = "<group>"; };
 		691C7B8568E91931FE228796 /* Pods_IntellectualDialogSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntellectualDialogSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB832168BE1F8F1F4C9A123D /* Pods-IntellectualDialogSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntellectualDialogSystem.release.xcconfig"; path = "Target Support Files/Pods-IntellectualDialogSystem/Pods-IntellectualDialogSystem.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				48A34331261B5BE100163F77 /* MessagesStorage.swift */,
 				487193312618C0E300231BCC /* Main.storyboard */,
 				48C44422261B72B400CFD11C /* StartingViewController.swift */,
+				48FC9C56261DBA8300319C1B /* DialogStarterViewController.swift */,
 				48A3432A261B246600163F77 /* TestViewController.swift */,
 				487193342618C0E800231BCC /* Assets.xcassets */,
 				487193362618C0E800231BCC /* LaunchScreen.storyboard */,
@@ -222,6 +225,7 @@
 			files = (
 				48A3432B261B246600163F77 /* TestViewController.swift in Sources */,
 				48C44423261B72B400CFD11C /* StartingViewController.swift in Sources */,
+				48FC9C57261DBA8300319C1B /* DialogStarterViewController.swift in Sources */,
 				4850AC13261C98AB000FF05B /* AIAPI.swift in Sources */,
 				4802EC53261A195B00305F09 /* MessengerViewController.swift in Sources */,
 				48A34332261B5BE100163F77 /* MessagesStorage.swift in Sources */,
