@@ -30,7 +30,6 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="startDialodButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VPe-3v-E94"/>
                                     <action selector="startNewDialogButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Evp-Ip-Uiq"/>
                                 </connections>
                             </button>
@@ -51,7 +50,6 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="resumeDialogButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YdZ-6f-ODY"/>
                                     <action selector="resumeOldDialogButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9kQ-Kh-OtK"/>
                                 </connections>
                             </button>
@@ -101,11 +99,11 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7D-sN-1GI">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7D-sN-1GI">
+                                                <rect key="frame" x="0.0" y="-1000" width="414" height="1768"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HL-rv-fGj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1768"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
@@ -121,7 +119,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="U7D-sN-1GI" firstAttribute="top" secondItem="dnd-kV-fow" secondAttribute="top" id="18f-Vs-4Bv"/>
+                                            <constraint firstItem="U7D-sN-1GI" firstAttribute="top" secondItem="dnd-kV-fow" secondAttribute="top" constant="-1000" id="18f-Vs-4Bv"/>
                                             <constraint firstItem="OtL-C0-bHu" firstAttribute="top" secondItem="U7D-sN-1GI" secondAttribute="bottom" id="DTd-5v-WOA"/>
                                             <constraint firstItem="OtL-C0-bHu" firstAttribute="leading" secondItem="dnd-kV-fow" secondAttribute="leading" constant="10" id="NRa-nE-NvS"/>
                                             <constraint firstAttribute="trailing" secondItem="U7D-sN-1GI" secondAttribute="trailing" id="ZR6-oV-Nz5"/>
@@ -162,51 +160,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKS-4g-axk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="-66.294642857142861"/>
-        </scene>
-        <!--Test View Controller-->
-        <scene sceneID="XVN-4c-Jw5">
-            <objects>
-                <viewController id="0uK-Kv-TIE" customClass="TestViewController" customModule="IntellectualDialogSystem" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="txO-xp-Lo2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxq-Av-2zl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSR-fZ-YMc">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                        <viewLayoutGuide key="safeArea" id="001-kT-dE2"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="ZSR-fZ-YMc" firstAttribute="top" secondItem="mxq-Av-2zl" secondAttribute="top" id="1bZ-f2-TXi"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZSR-fZ-YMc" secondAttribute="trailing" id="5gz-Pe-aV2"/>
-                                    <constraint firstItem="ZSR-fZ-YMc" firstAttribute="height" secondItem="mxq-Av-2zl" secondAttribute="height" id="a7f-d6-Plk"/>
-                                    <constraint firstItem="ZSR-fZ-YMc" firstAttribute="width" secondItem="mxq-Av-2zl" secondAttribute="width" id="gZ1-09-dLY"/>
-                                    <constraint firstItem="ZSR-fZ-YMc" firstAttribute="leading" secondItem="mxq-Av-2zl" secondAttribute="leading" id="q8e-wj-rri"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZSR-fZ-YMc" secondAttribute="bottom" id="qrU-mt-PFZ"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="QAV-Zy-11p"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="QAV-Zy-11p" firstAttribute="trailing" secondItem="mxq-Av-2zl" secondAttribute="trailing" id="6kE-YJ-8aw"/>
-                            <constraint firstItem="mxq-Av-2zl" firstAttribute="top" secondItem="QAV-Zy-11p" secondAttribute="top" id="DEk-tQ-lUT"/>
-                            <constraint firstItem="QAV-Zy-11p" firstAttribute="bottom" secondItem="mxq-Av-2zl" secondAttribute="bottom" id="EKz-ox-2hf"/>
-                            <constraint firstItem="mxq-Av-2zl" firstAttribute="leading" secondItem="QAV-Zy-11p" secondAttribute="leading" id="iav-iE-jWS"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="mxq-Av-2zl" id="lpS-Ak-sCx"/>
-                        <outlet property="viewForTest" destination="ZSR-fZ-YMc" id="GFt-hU-VZe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2vM-hT-pw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1871.0144927536232" y="28.794642857142854"/>
         </scene>
     </scenes>
     <resources>

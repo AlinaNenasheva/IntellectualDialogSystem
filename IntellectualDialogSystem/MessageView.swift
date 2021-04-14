@@ -6,11 +6,11 @@ class MessageView: UIView {
         var imageView = UIImageView()
         if let isBot = isBot {
             if isBot {
-                imageView.backgroundColor = .green
+                imageView.backgroundColor = .brown
             } else {
                 imageView.backgroundColor = .systemBlue
             }
-            }
+        }
         imageView.layer.cornerRadius = 30
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

@@ -9,6 +9,7 @@ class DialogStarterViewController: UIViewController {
         super.viewDidLoad()
         startNewDialog.layer.cornerRadius = 10
         resumeOldDialog.layer.cornerRadius = 10
+        
         if checkIfUDEmpty() {
             resumeOldDialog.isEnabled = false
         }
@@ -25,18 +26,24 @@ class DialogStarterViewController: UIViewController {
     
     
     @IBAction func startNewDialogButtonPressed(_ sender: Any) {
+        MessagesStorage.messages.removeAll()
+        UserDefaults.standard.removePersistentDomain(forName: "SavedMessages")
+        UserDefaults.standard.synchronize()
         goToMessagengerWindow()
     }
     
     @IBAction func resumeOldDialogButtonPressed(_ sender: Any) {
-        goToMessagengerWindow()
+        if !resumeOldDialog.isEnabled {
+            retriveToUserDefaults()
+            goToMessagengerWindow()
+        }
     }
     
     func goToMessagengerWindow() {
         performSegue(withIdentifier: "showToDialogWindow", sender: self)
     }
     
-    func retriveData() {
-        
+    func retriveToUserDefaults() {
+        MessagesStorage.messages = UserDefaults.standard.object(forKey: "SavedMessages") as? [String: Bool] ?? [String: Bool]()
     }
 }

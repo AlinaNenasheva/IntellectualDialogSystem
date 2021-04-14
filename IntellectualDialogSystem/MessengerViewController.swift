@@ -24,8 +24,10 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(processSwipe(_:)))
         rightSwipeGesture.direction = .right
         scrollView.addGestureRecognizer(rightSwipeGesture)
-        retriveToUserDefaults()
         replaceMessages()
+        AIAPI.shared().startConversation { (sessionID) in
+            AIAPI.shared().sessionID = sessionID ?? ""
+        }
      }
     
     func replaceMessages() {
@@ -75,13 +77,23 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentInset = .zero
     }
     
-    func retriveToUserDefaults() {
-        MessagesStorage.messages = UserDefaults.standard.object(forKey: "SavedMessages") as? [String: Bool] ?? [String: Bool]()
-    }
-    
     func saveToUserDefaults() {
         UserDefaults.standard.set(MessagesStorage.messages, forKey: "SavedMessages")
     }
+    
+    func getMessageResponse(userMessage: String) {
+        AIAPI.shared().sendRequest(userMessage: userMessage) { (message) in
+            AIAPI.shared().currentMessage = message ?? ""
+            DispatchQueue.main.async {
+                MessagesStorage.messages[self.enterMessageTextField.text ?? "" ] = true
+                self.saveToUserDefaults()
+                self.messageViews.insert(MessageView(isBot: true, messageText: AIAPI.shared().currentMessage ?? "Ошибка", contentView: self.messageContentView), at: 0)
+                self.saveToUserDefaults()
+                self.moveAllMessageViewsUp()
+                 }
+        }
+    }
+    
 }
 
 extension MessengerViewController: UITextFieldDelegate {
@@ -89,11 +101,11 @@ extension MessengerViewController: UITextFieldDelegate {
         enterMessageTextField.resignFirstResponder()
         if !(enterMessageTextField.text?.isEmpty ?? true) {
             MessagesStorage.messages[enterMessageTextField.text ?? "" ] = false
-            print(enterMessageTextField.text ?? "")
+            saveToUserDefaults()
             let messageView = MessageView(isBot: false, messageText: enterMessageTextField.text ?? "", contentView: messageContentView)
             messageViews.insert(messageView, at: 0)
-            saveToUserDefaults()
             moveAllMessageViewsUp()
+            getMessageResponse(userMessage: enterMessageTextField.text ?? "")
             enterMessageTextField.text?.removeAll()
         }
         view.endEditing(true)
