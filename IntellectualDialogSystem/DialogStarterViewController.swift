@@ -16,7 +16,6 @@ class DialogStarterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         resumeOldDialog.isEnabled = !MessagesStorage.messages.isEmpty
-//        print(UserDefaults.standard.object(forKey: "SavedMessages") as? [String: Bool] ?? [String: Bool]())
     }
     
     

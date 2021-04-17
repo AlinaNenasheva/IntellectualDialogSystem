@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4802EC53261A195B00305F09 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802EC52261A195B00305F09 /* MessengerViewController.swift */; };
+		4802EC53261A195B00305F09 /* MessangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802EC52261A195B00305F09 /* MessangerViewController.swift */; };
 		4802EC56261A19F200305F09 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802EC55261A19F200305F09 /* MessageView.swift */; };
 		4850AC13261C98AB000FF05B /* AIAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850AC12261C98AB000FF05B /* AIAPI.swift */; };
 		4871932C2618C0E300231BCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871932B2618C0E300231BCC /* AppDelegate.swift */; };
@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		2A15FA7C14442CBC51BFE75C /* Pods-IntellectualDialogSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntellectualDialogSystem.debug.xcconfig"; path = "Target Support Files/Pods-IntellectualDialogSystem/Pods-IntellectualDialogSystem.debug.xcconfig"; sourceTree = "<group>"; };
-		4802EC52261A195B00305F09 /* MessengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
+		4802EC52261A195B00305F09 /* MessangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessangerViewController.swift; sourceTree = "<group>"; };
 		4802EC55261A19F200305F09 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		4850AC12261C98AB000FF05B /* AIAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAPI.swift; sourceTree = "<group>"; };
 		487193282618C0E300231BCC /* IntellectualDialogSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntellectualDialogSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +73,7 @@
 			children = (
 				4871932B2618C0E300231BCC /* AppDelegate.swift */,
 				4871932D2618C0E300231BCC /* SceneDelegate.swift */,
-				4802EC52261A195B00305F09 /* MessengerViewController.swift */,
+				4802EC52261A195B00305F09 /* MessangerViewController.swift */,
 				4802EC55261A19F200305F09 /* MessageView.swift */,
 				4850AC12261C98AB000FF05B /* AIAPI.swift */,
 				48A34331261B5BE100163F77 /* MessagesStorage.swift */,
@@ -219,7 +219,7 @@
 			files = (
 				48FC9C57261DBA8300319C1B /* DialogStarterViewController.swift in Sources */,
 				4850AC13261C98AB000FF05B /* AIAPI.swift in Sources */,
-				4802EC53261A195B00305F09 /* MessengerViewController.swift in Sources */,
+				4802EC53261A195B00305F09 /* MessangerViewController.swift in Sources */,
 				48A34332261B5BE100163F77 /* MessagesStorage.swift in Sources */,
 				4802EC56261A19F200305F09 /* MessageView.swift in Sources */,
 				4871932C2618C0E300231BCC /* AppDelegate.swift in Sources */,

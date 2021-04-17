@@ -2,13 +2,14 @@ import UIKit
 
 class MessageView: UIView {
     var isBot: Bool?
+    
     lazy var imageBackgroundView: UIImageView = {
         var imageView = UIImageView()
         if let isBot = isBot {
             if isBot {
-                imageView.backgroundColor = .blue
+                imageView.backgroundColor = .black
             } else {
-                imageView.backgroundColor = #colorLiteral(red: 1, green: 0.5289127897, blue: 0.1450286409, alpha: 1)
+                imageView.backgroundColor = .white
             }
         }
         imageView.layer.cornerRadius = 30
@@ -19,7 +20,13 @@ class MessageView: UIView {
     lazy var messageTextLabel: UILabel = {
         var label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20)
-        label.textColor = .white
+        if let isBot = isBot {
+            if isBot {
+                label.textColor = .white
+            } else {
+                label.textColor = .black
+            }
+        }
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -48,13 +55,14 @@ class MessageView: UIView {
         self.addCustomView()
        }
        
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addCustomView()
     }
     
+    
     func addCustomView() {
-
         addSubview(imageBackgroundView)
         imageBackgroundView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
         imageBackgroundView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
@@ -68,11 +76,11 @@ class MessageView: UIView {
         messageTextLabel.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: -25).isActive = true
     }
     
+    
     func addMessage(height: CGFloat) {
         UIView.animate(withDuration: 0.1) {
             self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y - height, width: self.frame.size.width, height: self.frame.size.height);
         }
-
     }
 }
 

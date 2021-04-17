@@ -1,6 +1,6 @@
 import UIKit
 
-class MessengerViewController: UIViewController, UIScrollViewDelegate {
+class MessangerViewController: UIViewController, UIScrollViewDelegate {
    
     @IBOutlet weak var enterMessageTextField: UITextField!
     @IBOutlet weak var contentView: UIView!
@@ -23,6 +23,7 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(processSwipe(_:)))
         rightSwipeGesture.direction = .right
         scrollView.addGestureRecognizer(rightSwipeGesture)
+        
         AIAPI.shared().startConversation { (sessionID) in
             AIAPI.shared().sessionID = sessionID 
         }
@@ -44,6 +45,7 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 
+    
     func moveAllMessageViewsUp() {
         var sumHeight = [CGFloat]()
         if messageViews.count > 1 {
@@ -56,6 +58,7 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    
     @objc func handleKeyboardDidShow(_ notification: Notification) {
         if let keyboard = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
             let bottomInset = keyboard.height
@@ -65,19 +68,23 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    
     @objc func processSwipe(_ gesture: UISwipeGestureRecognizer) {
         if gesture.direction == .right {
             performSegue(withIdentifier: "showToStarterPage", sender: self)
         }
     }
     
+    
     @objc func handleTapOnContentView (_gesture: UITapGestureRecognizer){
         view.endEditing(true)
     }
     
+    
     @objc func handleKeyboardWillHide(_ notification: Notification) {
         scrollView.contentInset = .zero
     }
+    
     
     func saveToUserDefaults() {
         if let encoded = try? JSONEncoder().encode(MessagesStorage.messages) {
@@ -87,13 +94,13 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
 
     }
     
+    
     func getMessageResponse(userMessage: String) {
         AIAPI.shared().sendRequest(userMessage: userMessage) { (message) in
-            AIAPI.shared().currentMessage = message ?? ""
+            AIAPI.shared().currentMessage = message ?? "Ошибка"
             DispatchQueue.main.async {
                 MessagesStorage.messages.append(Message(text: AIAPI.shared().currentMessage ?? "Ошибка", isBot: true))
                 self.saveToUserDefaults()
-                print(MessagesStorage.messages)
                 self.messageViews.insert(MessageView(isBot: true, messageText: AIAPI.shared().currentMessage ?? "Ошибка", contentView: self.contentView), at: 0)
                 self.moveAllMessageViewsUp()
                  }
@@ -102,16 +109,15 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
     
 }
 
-extension MessengerViewController: UITextFieldDelegate {
+extension MessangerViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         enterMessageTextField.resignFirstResponder()
         if !(enterMessageTextField.text?.isEmpty ?? true) {
             MessagesStorage.messages.append(Message(text: enterMessageTextField.text ?? "", isBot: false))
             saveToUserDefaults()
-            let messageView = MessageView(isBot: false, messageText: enterMessageTextField.text ?? "", contentView: contentView)
+            let messageView = MessageView(isBot: false, messageText: enterMessageTextField.text ?? "Ошибка", contentView: contentView)
             messageViews.insert(messageView, at: 0)
             moveAllMessageViewsUp()
-            print(MessagesStorage.messages)
             getMessageResponse(userMessage: enterMessageTextField.text ?? "")
             enterMessageTextField.text?.removeAll()
         }
@@ -120,13 +126,4 @@ extension MessengerViewController: UITextFieldDelegate {
     }
 }
 
-
-extension Array {
-    func scan<T>(initial: T, _ f: (T, Element) -> T) -> [T] {
-        return self.reduce([initial], { (listSoFar: [T], next: Element) -> [T] in
-            let lastElement = listSoFar.last!
-            return listSoFar + [f(lastElement, next)]
-        })
-    }
-}
 

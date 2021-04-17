@@ -20,6 +20,7 @@ class AIAPI {
         assistant.disableSSLVerification()
     }
     
+    
     func startConversation(completion: @escaping (String) -> ()) {
          assistant.createSession(assistantID: "d8774ee6-85fe-4702-8d71-30a7a2b8ce99") {
           response, error in
