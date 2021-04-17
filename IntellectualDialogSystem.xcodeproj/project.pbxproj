@@ -10,6 +10,7 @@
 		4802EC53261A195B00305F09 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802EC52261A195B00305F09 /* MessengerViewController.swift */; };
 		4802EC56261A19F200305F09 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802EC55261A19F200305F09 /* MessageView.swift */; };
 		4850AC13261C98AB000FF05B /* AIAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4850AC12261C98AB000FF05B /* AIAPI.swift */; };
+		4869E5D72628E99400CB1AAF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869E5D62628E99400CB1AAF /* TestViewController.swift */; };
 		4871932C2618C0E300231BCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871932B2618C0E300231BCC /* AppDelegate.swift */; };
 		4871932E2618C0E300231BCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871932D2618C0E300231BCC /* SceneDelegate.swift */; };
 		487193332618C0E300231BCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487193312618C0E300231BCC /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		4802EC52261A195B00305F09 /* MessengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
 		4802EC55261A19F200305F09 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		4850AC12261C98AB000FF05B /* AIAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAPI.swift; sourceTree = "<group>"; };
+		4869E5D62628E99400CB1AAF /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		487193282618C0E300231BCC /* IntellectualDialogSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntellectualDialogSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4871932B2618C0E300231BCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4871932D2618C0E300231BCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				4850AC12261C98AB000FF05B /* AIAPI.swift */,
 				48A34331261B5BE100163F77 /* MessagesStorage.swift */,
 				487193312618C0E300231BCC /* Main.storyboard */,
+				4869E5D62628E99400CB1AAF /* TestViewController.swift */,
 				48FC9C56261DBA8300319C1B /* DialogStarterViewController.swift */,
 				487193342618C0E800231BCC /* Assets.xcassets */,
 				487193362618C0E800231BCC /* LaunchScreen.storyboard */,
@@ -223,6 +226,7 @@
 				48A34332261B5BE100163F77 /* MessagesStorage.swift in Sources */,
 				4802EC56261A19F200305F09 /* MessageView.swift in Sources */,
 				4871932C2618C0E300231BCC /* AppDelegate.swift in Sources */,
+				4869E5D72628E99400CB1AAF /* TestViewController.swift in Sources */,
 				4871932E2618C0E300231BCC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

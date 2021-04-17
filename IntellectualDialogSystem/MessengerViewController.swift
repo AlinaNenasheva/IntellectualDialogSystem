@@ -5,7 +5,6 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var enterMessageTextField: UITextField!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var messageContentView: UIView!
     var messageViews = [MessageView]()
     
      override func viewDidLoad() {
@@ -15,8 +14,8 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         enterMessageTextField.returnKeyType = UIReturnKeyType.send
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapOnContentView(_gesture:)))
         scrollView.addGestureRecognizer(tapGestureRecognizer)
@@ -24,24 +23,27 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(processSwipe(_:)))
         rightSwipeGesture.direction = .right
         scrollView.addGestureRecognizer(rightSwipeGesture)
-        replaceMessages()
         AIAPI.shared().startConversation { (sessionID) in
-            AIAPI.shared().sessionID = sessionID ?? ""
+            AIAPI.shared().sessionID = sessionID 
         }
      }
     
-    func replaceMessages() {
-        if messageViews.count > 1 {
-            for index in (0..<messageViews.count).reversed() {
-                var sumHeight: CGFloat = 0
-                for index in (0..<messageViews.count).reversed() {
-                    sumHeight += messageViews[index].frame.height
-                }
-                messageViews[index].addMessage(height: sumHeight)
-            }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if MessagesStorage.messages.isEmpty {
+            messageViews = [MessageView]()
         }
+        redrawOldDialog()
     }
     
+    
+    func redrawOldDialog() {
+        for message in MessagesStorage.messages {
+            messageViews.insert(MessageView(isBot: message.isBot, messageText: message.text, contentView: contentView), at: 0)
+                moveAllMessageViewsUp()
+        }
+    }
+
     func moveAllMessageViewsUp() {
         var sumHeight = [CGFloat]()
         if messageViews.count > 1 {
@@ -67,28 +69,32 @@ class MessengerViewController: UIViewController, UIScrollViewDelegate {
         if gesture.direction == .right {
             performSegue(withIdentifier: "showToStarterPage", sender: self)
         }
-        }
+    }
     
     @objc func handleTapOnContentView (_gesture: UITapGestureRecognizer){
         view.endEditing(true)
     }
     
-    @objc func handleKeyboardWillHide() {
+    @objc func handleKeyboardWillHide(_ notification: Notification) {
         scrollView.contentInset = .zero
     }
     
     func saveToUserDefaults() {
-        UserDefaults.standard.set(MessagesStorage.messages, forKey: "SavedMessages")
+        if let encoded = try? JSONEncoder().encode(MessagesStorage.messages) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "Messages")
+        }
+
     }
     
     func getMessageResponse(userMessage: String) {
         AIAPI.shared().sendRequest(userMessage: userMessage) { (message) in
             AIAPI.shared().currentMessage = message ?? ""
             DispatchQueue.main.async {
-                MessagesStorage.messages[self.enterMessageTextField.text ?? "" ] = true
+                MessagesStorage.messages.append(Message(text: AIAPI.shared().currentMessage ?? "Ошибка", isBot: true))
                 self.saveToUserDefaults()
-                self.messageViews.insert(MessageView(isBot: true, messageText: AIAPI.shared().currentMessage ?? "Ошибка", contentView: self.messageContentView), at: 0)
-                self.saveToUserDefaults()
+                print(MessagesStorage.messages)
+                self.messageViews.insert(MessageView(isBot: true, messageText: AIAPI.shared().currentMessage ?? "Ошибка", contentView: self.contentView), at: 0)
                 self.moveAllMessageViewsUp()
                  }
         }
@@ -100,11 +106,12 @@ extension MessengerViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         enterMessageTextField.resignFirstResponder()
         if !(enterMessageTextField.text?.isEmpty ?? true) {
-            MessagesStorage.messages[enterMessageTextField.text ?? "" ] = false
+            MessagesStorage.messages.append(Message(text: enterMessageTextField.text ?? "", isBot: false))
             saveToUserDefaults()
-            let messageView = MessageView(isBot: false, messageText: enterMessageTextField.text ?? "", contentView: messageContentView)
+            let messageView = MessageView(isBot: false, messageText: enterMessageTextField.text ?? "", contentView: contentView)
             messageViews.insert(messageView, at: 0)
             moveAllMessageViewsUp()
+            print(MessagesStorage.messages)
             getMessageResponse(userMessage: enterMessageTextField.text ?? "")
             enterMessageTextField.text?.removeAll()
         }
@@ -122,3 +129,4 @@ extension Array {
         })
     }
 }
+

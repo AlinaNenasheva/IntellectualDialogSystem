@@ -9,41 +9,44 @@ class DialogStarterViewController: UIViewController {
         super.viewDidLoad()
         startNewDialog.layer.cornerRadius = 10
         resumeOldDialog.layer.cornerRadius = 10
-        
-        if checkIfUDEmpty() {
-            resumeOldDialog.isEnabled = false
-        }
+        retriveToUserDefaults()
+        resumeOldDialog.isEnabled = !MessagesStorage.messages.isEmpty
     }
     
-    func checkIfUDEmpty() -> Bool {
-        if let messages = UserDefaults.standard.array(forKey: "messages") {
-            if messages.isEmpty {
-                return true
-            }
-        }
-        return false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        resumeOldDialog.isEnabled = !MessagesStorage.messages.isEmpty
+//        print(UserDefaults.standard.object(forKey: "SavedMessages") as? [String: Bool] ?? [String: Bool]())
     }
     
     
     @IBAction func startNewDialogButtonPressed(_ sender: Any) {
         MessagesStorage.messages.removeAll()
-        UserDefaults.standard.removePersistentDomain(forName: "SavedMessages")
+        UserDefaults.standard.removePersistentDomain(forName: "Messages")
         UserDefaults.standard.synchronize()
         goToMessagengerWindow()
     }
     
+    
     @IBAction func resumeOldDialogButtonPressed(_ sender: Any) {
-        if !resumeOldDialog.isEnabled {
+        if resumeOldDialog.isEnabled {
             retriveToUserDefaults()
             goToMessagengerWindow()
         }
     }
     
+    
     func goToMessagengerWindow() {
         performSegue(withIdentifier: "showToDialogWindow", sender: self)
     }
     
+    
     func retriveToUserDefaults() {
-        MessagesStorage.messages = UserDefaults.standard.object(forKey: "SavedMessages") as? [String: Bool] ?? [String: Bool]()
+        if let messages = UserDefaults.standard.object(forKey: "Messages") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedMessages = try? decoder.decode([Message].self, from: messages) {
+                MessagesStorage.messages = loadedMessages
+            }
+        }
     }
 }

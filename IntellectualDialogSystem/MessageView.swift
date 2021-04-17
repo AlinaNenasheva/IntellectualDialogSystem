@@ -6,9 +6,9 @@ class MessageView: UIView {
         var imageView = UIImageView()
         if let isBot = isBot {
             if isBot {
-                imageView.backgroundColor = .brown
+                imageView.backgroundColor = .blue
             } else {
-                imageView.backgroundColor = .systemBlue
+                imageView.backgroundColor = #colorLiteral(red: 1, green: 0.5289127897, blue: 0.1450286409, alpha: 1)
             }
         }
         imageView.layer.cornerRadius = 30
@@ -28,13 +28,12 @@ class MessageView: UIView {
     
     init(isBot: Bool, messageText: String, contentView: UIView) {
         let numberOfLines: Int
-        if (8 * messageText.count) % Int(contentView.frame.width - 55) != 0 {
-            numberOfLines = Int(8 * messageText.count) / Int(contentView.frame.width - 55) + 1
+        if messageText.count  % 27 != 0 {
+            numberOfLines = (messageText.count / 27) + 1
         } else {
-            numberOfLines = Int(8 * messageText.count) / Int(contentView.frame.width - 55)
+            numberOfLines = messageText.count / 27
         }
-        print(numberOfLines)
-        let frame = CGRect(x: 0, y: Int(contentView.frame.height) - ((numberOfLines == 1) ? 90 : numberOfLines * 60), width: Int(contentView.frame.width) - 10, height: (numberOfLines == 1) ? 90 : numberOfLines * 60 )
+        let frame = CGRect(x: 0, y: Int(contentView.frame.height - 60) - ((numberOfLines == 1) ? 90 : numberOfLines * 60), width: Int(contentView.frame.width), height: (numberOfLines == 1) ? 90 : numberOfLines * 60 )
         super.init(frame: frame)
         self.isBot = isBot
         self.messageTextLabel.numberOfLines = numberOfLines + 1
@@ -64,7 +63,7 @@ class MessageView: UIView {
     
         self.addSubview(messageTextLabel)
         messageTextLabel.leftAnchor.constraint(equalTo: imageBackgroundView.leftAnchor, constant: 25).isActive = true
-        messageTextLabel.rightAnchor.constraint(equalTo: imageBackgroundView.rightAnchor, constant: 0).isActive = true
+        messageTextLabel.rightAnchor.constraint(equalTo: imageBackgroundView.rightAnchor, constant: -15).isActive = true
         messageTextLabel.topAnchor.constraint(equalTo: imageBackgroundView.topAnchor, constant: 15).isActive = true
         messageTextLabel.bottomAnchor.constraint(equalTo: imageBackgroundView.bottomAnchor, constant: -25).isActive = true
     }
