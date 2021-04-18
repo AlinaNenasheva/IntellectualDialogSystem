@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z53-0t-gA8">
-                                <rect key="frame" x="27" y="557" width="360" height="100"/>
+                                <rect key="frame" x="26" y="557" width="362" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UL8-1e-TC6">
-                                <rect key="frame" x="27" y="662" width="360" height="100"/>
+                                <rect key="frame" x="26" y="662" width="362" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="yH0-UF-Y4B"/>
@@ -63,15 +63,15 @@
                         <color key="backgroundColor" red="0.63758716386618075" green="0.078407173934956054" blue="0.10603822550431127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UL8-1e-TC6" firstAttribute="top" secondItem="z53-0t-gA8" secondAttribute="bottom" constant="5" id="8Md-NH-B4x"/>
-                            <constraint firstItem="UL8-1e-TC6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-27" id="D7F-Du-0Vl"/>
+                            <constraint firstItem="UL8-1e-TC6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-26" id="D7F-Du-0Vl"/>
                             <constraint firstItem="UL8-1e-TC6" firstAttribute="height" secondItem="z53-0t-gA8" secondAttribute="height" id="Ej7-0p-QB1"/>
-                            <constraint firstItem="z53-0t-gA8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="RRY-Vd-kLs"/>
+                            <constraint firstItem="z53-0t-gA8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="RRY-Vd-kLs"/>
                             <constraint firstItem="z53-0t-gA8" firstAttribute="top" secondItem="W4d-9w-coZ" secondAttribute="bottom" id="Wac-8I-0dU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UL8-1e-TC6" secondAttribute="bottom" constant="100" id="bS4-U7-Qbr"/>
-                            <constraint firstItem="z53-0t-gA8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-27" id="gV6-9W-gZ4"/>
+                            <constraint firstItem="z53-0t-gA8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-26" id="gV6-9W-gZ4"/>
                             <constraint firstItem="W4d-9w-coZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ngK-0Y-eYs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W4d-9w-coZ" secondAttribute="trailing" constant="20" id="pr1-9x-zlu"/>
-                            <constraint firstItem="UL8-1e-TC6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="rZi-Ii-wwq"/>
+                            <constraint firstItem="UL8-1e-TC6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="rZi-Ii-wwq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CLJ-7C-aBB"/>

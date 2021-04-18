@@ -16,6 +16,7 @@
 		487193352618C0E800231BCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487193342618C0E800231BCC /* Assets.xcassets */; };
 		487193382618C0E800231BCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487193362618C0E800231BCC /* LaunchScreen.storyboard */; };
 		48A34332261B5BE100163F77 /* MessagesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A34331261B5BE100163F77 /* MessagesStorage.swift */; };
+		48E7D7CB262B6EF2007700B4 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7D7CA262B6EF2007700B4 /* UserDefaultsHandler.swift */; };
 		48FC9C57261DBA8300319C1B /* DialogStarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC9C56261DBA8300319C1B /* DialogStarterViewController.swift */; };
 		7F016C8B515531E78FB4536B /* Pods_IntellectualDialogSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691C7B8568E91931FE228796 /* Pods_IntellectualDialogSystem.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		487193372618C0E800231BCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		487193392618C0E800231BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A34331261B5BE100163F77 /* MessagesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesStorage.swift; sourceTree = "<group>"; };
+		48E7D7CA262B6EF2007700B4 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		48FC9C56261DBA8300319C1B /* DialogStarterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogStarterViewController.swift; sourceTree = "<group>"; };
 		691C7B8568E91931FE228796 /* Pods_IntellectualDialogSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntellectualDialogSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB832168BE1F8F1F4C9A123D /* Pods-IntellectualDialogSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntellectualDialogSystem.release.xcconfig"; path = "Target Support Files/Pods-IntellectualDialogSystem/Pods-IntellectualDialogSystem.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				4802EC52261A195B00305F09 /* MessangerViewController.swift */,
 				4802EC55261A19F200305F09 /* MessageView.swift */,
 				4850AC12261C98AB000FF05B /* AIAPI.swift */,
+				48E7D7CA262B6EF2007700B4 /* UserDefaultsHandler.swift */,
 				48A34331261B5BE100163F77 /* MessagesStorage.swift */,
 				487193312618C0E300231BCC /* Main.storyboard */,
 				48FC9C56261DBA8300319C1B /* DialogStarterViewController.swift */,
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FC9C57261DBA8300319C1B /* DialogStarterViewController.swift in Sources */,
+				48E7D7CB262B6EF2007700B4 /* UserDefaultsHandler.swift in Sources */,
 				4850AC13261C98AB000FF05B /* AIAPI.swift in Sources */,
 				4802EC53261A195B00305F09 /* MessangerViewController.swift in Sources */,
 				48A34332261B5BE100163F77 /* MessagesStorage.swift in Sources */,

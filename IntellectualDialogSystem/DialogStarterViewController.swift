@@ -4,11 +4,13 @@ class DialogStarterViewController: UIViewController {
 
     @IBOutlet weak var startNewDialog: UIButton!
     @IBOutlet weak var resumeOldDialog: UIButton!
+    let userDefaultsHandler = UserDefaultsHandler(userDefaultsKey: "Messages")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewDialog.layer.cornerRadius = 10
-        resumeOldDialog.layer.cornerRadius = 10
+        startNewDialog.layer.cornerRadius = 50
+        resumeOldDialog.layer.cornerRadius = 50
         retriveToUserDefaults()
         resumeOldDialog.isEnabled = !MessagesStorage.messages.isEmpty
     }
@@ -21,15 +23,14 @@ class DialogStarterViewController: UIViewController {
     
     @IBAction func startNewDialogButtonPressed(_ sender: Any) {
         MessagesStorage.messages.removeAll()
-        UserDefaults.standard.removePersistentDomain(forName: "Messages")
-        UserDefaults.standard.synchronize()
+        userDefaultsHandler.clearUserDefaults()
         goToMessagengerWindow()
     }
     
     
     @IBAction func resumeOldDialogButtonPressed(_ sender: Any) {
         if resumeOldDialog.isEnabled {
-            retriveToUserDefaults()
+            userDefaultsHandler.retriveToUserDefaults()
             goToMessagengerWindow()
         }
     }
